@@ -2,7 +2,7 @@ import { createRef } from "just-dom";
 import { jd } from "../jd.config";
 import { createSignal } from "@just-dom/signals";
 
-export function StudentForm({ student, onSubmit }) {
+export function StudentForm({ student, onSubmit } = {}) {
     console.log(student);
     const btnRef = createRef();
 

@@ -1,9 +1,9 @@
 import { createRef } from "just-dom";
 import { jd } from "../jd.config";
+import { createSignal } from "@just-dom/signals";
 
 export function StudentForm({ student, onSubmit }) {
     console.log(student);
-    const formRef = createRef();
     const btnRef = createRef();
 
     return jd.form({
@@ -37,7 +37,7 @@ export function StudentForm({ student, onSubmit }) {
             jd.label({ className: 'input validator w-full' }, [
                 jd.lucide('User2', { className: 'h-[1em] opacity-50' }),
                 jd.input({
-                    'name': 'nome',
+                    'name': 'name',
                     'type': 'text',
                     'required': true,
                     'placeholder': 'Nome',
@@ -53,7 +53,7 @@ export function StudentForm({ student, onSubmit }) {
             jd.label({ className: 'input validator w-full' }, [
                 jd.lucide('User2', { className: 'h-[1em] opacity-50' }),
                 jd.input({
-                    'name': 'cognome',
+                    'name': 'surname',
                     'type': 'text',
                     'required': true,
                     'placeholder': 'Cognome',
@@ -69,7 +69,7 @@ export function StudentForm({ student, onSubmit }) {
             jd.label({ className: 'input validator w-full' }, [
                 jd.lucide('GraduationCap', { className: 'h-[1em] opacity-50' }),
                 jd.input({
-                    'name': 'corso',
+                    'name': 'course',
                     'type': 'text',
                     'required': true,
                     'placeholder': 'Corso',

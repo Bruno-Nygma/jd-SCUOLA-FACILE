@@ -5,7 +5,7 @@ import { jd } from "../jd.config";
 export function StudentPage({ params }) {
     const divRef = createRef();
 
-    fetch(`http://localhost:5000/api/student/${params.id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/student/${params.id}`)
         .then(async res => {
             const student = await res.json();
             console.log(student);
@@ -32,7 +32,7 @@ export function StudentPage({ params }) {
                     const formData = new FormData(e.target);
                     const data = Object.fromEntries(formData);
                     data.img = `https://api.dicebear.com/9.x/initials/svg?seed=${data.name}-${data.surname}`
-                    return fetch(`http://localhost:5000/api/student/${student.id}`, {
+                    return fetch(`${import.meta.env.VITE_API_URL}/student/${student.id}`, {
                         method: 'PATCH',
                         body: JSON.stringify(data),
                         headers: {

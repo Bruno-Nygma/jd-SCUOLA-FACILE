@@ -9,7 +9,7 @@ export function StudentsListPage() {
 
     const [studentsList, setStudentsList] = createSignal([]);
 
-    fetch('http://localhost:5000/api/students')
+    fetch('${import.meta.env.VITE_API_URL}/students')
         .then(async res => {
             const students = await res.json();
             console.log(students);
@@ -85,7 +85,7 @@ export function StudentsListPage() {
                         [jd.lucide('Trash2', { className: 'size-4' })]
                     ),
                     onDelete: async () => {
-                        return fetch(`http://localhost:5000/api/student/${student.id}`, { method: 'DELETE' })
+                        return fetch(`${import.meta.env.VITE_API_URL}/student/${student.id}`, { method: 'DELETE' })
                             .then(() => {
                                 setTimeout(() => {
                                     setStudentsList(studentsList().filter(st => st.id !== student.id))

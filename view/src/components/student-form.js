@@ -29,7 +29,7 @@ export function StudentForm({ student, onSubmit }) {
                 }
             })
         },
-        className: 'space-y-4'
+        className: 'space-y-4 mt-6'
     }, [
 
         //Input Nome

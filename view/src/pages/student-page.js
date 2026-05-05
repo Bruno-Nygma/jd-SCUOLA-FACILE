@@ -20,7 +20,7 @@ export function StudentPage({ params }) {
                 jd.p({ className: 'opacity-70' }, [student.email]),
                 jd.progress({
                     className: "progress w-56 mx-auto",
-                    value: `${student.absence_percentage}`,
+                    value: student.absence_percentage,
                     max: "100"
                 })
             )

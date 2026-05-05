@@ -1,9 +1,36 @@
+import { createRef } from "just-dom";
 import { jd } from "../jd.config";
 
-export function StudentForm(student) {
+export function StudentForm({ student, onSubmit }) {
     console.log(student);
+    const formRef = createRef();
+    const btnRef = createRef();
 
-    return jd.form({ className: 'space-y-4' }, [
+    return jd.form({
+        ref: (el) => {
+            el.addEventListener('submit', e => {
+                e.preventDefault();
+                if (onSubmit && typeof onSubmit === 'function') {
+                    btnRef.current.disabled = true;
+                    btnRef.current.innerHTML = '';
+                    btnRef.current.append(jd.lucide('Loader2', { className: 'size-4 animate-spin' }));
+
+                    onSubmit(e).then(() => {
+                        console.log('modifica ascoltata da dentro student form');
+                    })
+                        .finally(() => {
+                            btnRef.current.disabled = false;
+                            btnRef.current.innerHTML = '';
+                            btnRef.current.append(
+                                jd.lucide(student ? 'Save' : 'Plus', { className: 'size-4' }),
+                                student ? 'Modifica studente' : 'Aggiungi studente'
+                            )
+                        })
+                }
+            })
+        },
+        className: 'space-y-4'
+    }, [
 
         //Input Nome
         jd.div({}, [
@@ -96,6 +123,7 @@ export function StudentForm(student) {
 
         //Submit
         jd.button({
+            ref: btnRef,
             'type': 'submit',
             className: 'btn btn-primary'
         }, [

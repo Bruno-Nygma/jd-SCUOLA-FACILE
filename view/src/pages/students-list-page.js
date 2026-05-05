@@ -105,7 +105,6 @@ export function StudentsListPage() {
                     jd.th({}, [
                         jd.label({}, [
                             jd.input({
-                                // ref: allCheckboxRef,
                                 ref: (el) => {
                                     effect(el, () => {
                                         el.checked = studentsList().every(st => st.checked);
@@ -132,7 +131,6 @@ export function StudentsListPage() {
                 ]),
             ]),
             jd.tbody({
-                // ref: tbody
                 ref: (el) => {
                     effect(el, () => {
                         el.innerHTML = '';

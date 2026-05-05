@@ -9,7 +9,7 @@ export function StudentsListPage() {
 
     const [studentsList, setStudentsList] = createSignal([]);
 
-    fetch('${import.meta.env.VITE_API_URL}/students')
+    fetch(`${import.meta.env.VITE_API_URL}/students`)
         .then(async res => {
             const students = await res.json();
             console.log(students);

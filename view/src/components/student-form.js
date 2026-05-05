@@ -1,30 +1,27 @@
 import { createRef } from "just-dom";
 import { jd } from "../jd.config";
-import { createSignal } from "@just-dom/signals";
+import { createSignal, effect } from "@just-dom/signals";
 
 export function StudentForm({ student, onSubmit } = {}) {
     console.log(student);
-    const btnRef = createRef();
+
+    const [loading, setLoading] = createSignal(false)
 
     return jd.form({
         ref: (el) => {
-            el.addEventListener('submit', e => {
+            el.addEventListener('submit', async e => {
                 e.preventDefault();
                 if (onSubmit && typeof onSubmit === 'function') {
-                    btnRef.current.disabled = true;
-                    btnRef.current.innerHTML = '';
-                    btnRef.current.append(jd.lucide('Loader2', { className: 'size-4 animate-spin' }));
 
-                    onSubmit(e).then(() => {
+                    setLoading(true)
+
+                    await onSubmit(e).then(() => {
                         console.log('modifica ascoltata da dentro student form');
                     })
+                        .catch()
                         .finally(() => {
-                            btnRef.current.disabled = false;
-                            btnRef.current.innerHTML = '';
-                            btnRef.current.append(
-                                jd.lucide(student ? 'Save' : 'Plus', { className: 'size-4' }),
-                                student ? 'Modifica studente' : 'Aggiungi studente'
-                            )
+
+                            setLoading(false)
                         })
                 }
             })
@@ -123,13 +120,18 @@ export function StudentForm({ student, onSubmit } = {}) {
 
         //Submit
         jd.button({
-            ref: btnRef,
+            //ref: btnRef,
+            ref: (el) => {
+                effect(el, () => {
+                    el.replaceChildren(
+                        jd.lucide(loading() ? 'Loader2' : 'Save', { className: loading() ? 'size-4 animate-spin' : 'size-4' }),
+                        student ? 'Modifica studente' : 'Aggiungi studente'
+                    )
+                })
+            },
             'type': 'submit',
             className: 'btn btn-primary'
-        }, [
-            jd.lucide(student ? 'Save' : 'Plus', { className: 'size-4' }),
-            student ? 'Modifica studente' : 'Aggiungi studente'
-        ])
+        }, [])
     ])
 }
 

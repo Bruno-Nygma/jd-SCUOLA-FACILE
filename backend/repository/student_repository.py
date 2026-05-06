@@ -1,16 +1,20 @@
-from dummy_db import studenti_db
+from persistence.dummy_db import students_db
 
-def create(student): 
-    return studenti_db.create(student)
+def create(student):
+    return students_db.create(student)
 
-def get_all(): 
-    return studenti_db.get_all()
+def get_all():
+    return students_db.get_all()
 
-def get_by_id(student_id): 
-    return studenti_db.get_by_id(student_id)
+def get_by_id(student_id):
+    return students_db.get_by_id(student_id)
 
-def update_student(student_id, data): 
-    return studenti_db.update(student_id, data)
+# Cerca studenti per un campo specifico (es: "corso", "Informatica")
+def get_by_field(field, value):
+    return students_db.get_by_field(field, value)
 
-def delete_by_id(student_id): 
-    studenti_db.delete_by_id(student_id)
+def update_student(student_id, data):
+    return students_db.update(student_id, data)
+
+def delete_by_id(student_id):
+    return students_db.delete_by_id(student_id)

@@ -1,4 +1,4 @@
-from dummy_db import docenti_db
+from persistence.dummy_db import docenti_db
 
 def get_all_docenti():
     return docenti_db.get_all()

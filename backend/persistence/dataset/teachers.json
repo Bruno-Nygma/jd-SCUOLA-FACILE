@@ -1,0 +1,22 @@
+[
+    {"id": "DOC-001", "name": "Marco", "surname": "Bianchi", "course": "Programmazione", "email": "marco.bianchi@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-002", "name": "Laura", "surname": "Ferretti", "course": "Economia Aziendale", "email": "laura.ferretti@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-003", "name": "Giuseppe", "surname": "Lombardi", "course": "Matematica", "email": "giuseppe.lombardi@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-004", "name": "Paola", "surname": "Morandi", "course": "Design Grafico", "email": "paola.morandi@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-005", "name": "Roberto", "surname": "Esposito", "course": "Reti e Sistemi", "email": "roberto.esposito@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-006", "name": "Francesca", "surname": "De Luca", "course": "Inglese", "email": "francesca.deluca@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-007", "name": "Antonio", "surname": "Rinaldi", "course": "Database", "email": "antonio.rinaldi@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-008", "name": "Claudia", "surname": "Santoro", "course": "Web Development", "email": "claudia.santoro@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-009", "name": "Stefano", "surname": "Gatti", "course": "Cybersecurity", "email": "stefano.gatti@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-010", "name": "Alessandra", "surname": "Fabbri", "course": "Marketing", "email": "alessandra.fabbri@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-011", "name": "Massimo", "surname": "Vitale", "course": "Elettronica", "email": "massimo.vitale@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-012", "name": "Daniela", "surname": "Mancini", "course": "Intelligenza Artificiale", "email": "daniela.mancini@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-013", "name": "Luca", "surname": "Palmieri", "course": "Cloud Computing", "email": "luca.palmieri@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-014", "name": "Silvia", "surname": "Benedetti", "course": "Game Design", "email": "silvia.benedetti@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-015", "name": "Enrico", "surname": "Caruso", "course": "UX/UI Design", "email": "enrico.caruso@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-016", "name": "Monica", "surname": "Greco", "course": "Fisica", "email": "monica.greco@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-017", "name": "Fabio", "surname": "Marini", "course": "Statistica", "email": "fabio.marini@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-018", "name": "Cristina", "surname": "Parisi", "course": "Diritto Informatico", "email": "cristina.parisi@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-019", "name": "Paolo", "surname": "Sorrentino", "course": "Sistemi Operativi", "email": "paolo.sorrentino@example.com", "password": "pass1234","img": null},
+    {"id": "DOC-020", "name": "Gianna", "surname": "Testa", "course": "Project Management", "email": "gianna.testa@example.com", "password": "pass1234","img": null}
+]

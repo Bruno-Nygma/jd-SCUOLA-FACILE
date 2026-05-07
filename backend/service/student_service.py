@@ -24,7 +24,7 @@ def create(data):
                                data["absence_percentage"],
                                data["email"],
                                data["password"],
-                               f"https://api.dicebear.com/9.x/initials/svg?seed={data["name"]}-{data["surname"]}")
+                               data["img"])
 
     return student_repository.create(student_2_create)
 
@@ -60,6 +60,9 @@ def delete_by_id(student_id):
 # Qui metto tutti i vincoli che mi potrei anche sul DB (chiavi not null, vincoli numerici ect ect )
 # data_student perchè non ho uno studente, ho "data" che mi arriva dal FE
 def _validate_student(data_student):
+
+    if "img" not in data_student:
+        data_student["img"] = f"https://api.dicebear.com/9.x/initials/svg?seed={data_student["name"]}-{data_student["surname"]}"
 
     # Campi obbligatori
     for campo in ["name", "surname", "email"]:

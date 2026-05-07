@@ -2,7 +2,7 @@ import json
 import os
 
 from model.student import Student
-# from model.teacher import Teacher
+from model.teacher import Teacher
 # from model.course import Course
 
 # Classe temporanea che simula un datrabase - Operazioni CRUD
@@ -68,10 +68,10 @@ with open(os.path.join(_dataset_dir, "students.json")) as f:
         students_db.create(Student(s["id"], s["name"], s["surname"], s["course"],
                                    s["absence_percentage"], s["email"], s["password"], s["img"]))
 
-# with open(os.path.join(_dataset_dir, "teachers.json")) as f:
-#     for t in json.load(f):
-#         teachers_db.create(Teacher(t["id"], t["nome"], t["cognome"], t["materia"],
-#                                    t["email"], t["password"]))
+with open(os.path.join(_dataset_dir, "teachers.json")) as f:
+    for t in json.load(f):
+        teachers_db.create(Teacher(t["id"], t["name"], t["surname"], t["course"],
+                                   t["email"], t["password"], t["img"]))
 
 # with open(os.path.join(_dataset_dir, "courses.json")) as f:
 #     for c in json.load(f):
